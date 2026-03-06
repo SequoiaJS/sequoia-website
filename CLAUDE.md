@@ -6,7 +6,7 @@ Static single-page marketing website for Sequoia Precision Components (formerly 
 ## Architecture
 - **Single file**: `index.html` contains all HTML, CSS (in `<style>`), and JS (in `<script>`)
 - **No framework/bundler** — pure HTML/CSS/JS, served by Nginx
-- **Fonts**: Google Fonts (DM Sans + JetBrains Mono)
+- **Fonts**: Self-hosted woff2 (DM Sans + JetBrains Mono) in `fonts/`
 - **Responsive**: Mobile-first breakpoints at 768px and 1024px
 
 ## Serving
@@ -32,6 +32,13 @@ Not yet integrated into ai-stack/Traefik. When ready for production, add as an N
 ## Key Files
 ```
 index.html                                  — Entire site (HTML + CSS + JS)
+privacy.html                                — Privacy Policy (CCPA-compliant)
+terms.html                                  — Terms of Use
+accessibility.html                          — WCAG 2.1 AA accessibility statement
+fonts/
+  dm-sans-normal.woff2                      — DM Sans 300-800 (latin)
+  dm-sans-italic-400.woff2                  — DM Sans italic 400 (latin)
+  jetbrains-mono-normal.woff2              — JetBrains Mono 400-700 (latin)
 favicon.ico                                 — End mill icon favicon
 SequoiaPrecisionComponents - cropped.jpg    — Primary logo (nav + footer)
 Sequoia Automatic.gif                       — Legacy Sequoia Automatic logo
@@ -73,6 +80,24 @@ images/
 ## Conventions
 - All CSS uses custom properties from `:root`
 - Scroll reveal via IntersectionObserver (`.reveal` → `.visible`)
-- No external JS dependencies
+- No external JS dependencies — fonts self-hosted, no third-party requests
 - Images use `loading="lazy"` except hero
 - Stat: **400+ CNC Machines** across all facilities
+
+## Accessibility (WCAG 2.1 AA)
+- Skip-to-content link at top of page
+- `<main id="main">` landmark wraps all content between nav and footer
+- `aria-expanded`/`aria-controls` on mobile nav toggle, synced via JS
+- `:focus-visible` outlines (orange, 3px) on all interactive elements
+- `prefers-reduced-motion` disables smooth scroll
+- Decorative emoji use `aria-hidden="true"`
+- RFQ form uses `<form>`, `required`, `aria-required`, and `autocomplete` attributes
+- Privacy policy consent link on form
+
+## Legal / Compliance
+- **Privacy Policy** (`privacy.html`): Covers RFQ data collection, CCPA rights, no cookies/tracking
+- **Terms of Use** (`terms.html`): IP, RFQ disclaimer, Illinois governing law
+- **Accessibility Statement** (`accessibility.html`): WCAG 2.1 AA commitment
+- Contact for legal pages: info@sequoiaweb.com
+- No cookies, analytics, or tracking — no cookie banner needed
+- Footer links to all three legal pages

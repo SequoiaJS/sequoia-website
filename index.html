@@ -6,9 +6,31 @@
 <title>Sequoia Automatic — Global Precision Manufacturing for Thermal Management</title>
 <meta name="description" content="Sequoia Automatic: 65+ years of precision CNC machining for automotive and data center thermal management. Four facilities, three continents, one standard.">
 <link rel="icon" type="image/png" href="SAMill-removebg.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url(fonts/dm-sans-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/dm-sans-italic-400.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(fonts/jetbrains-mono-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 :root {
   --navy: #0A2466;
   --navy-deep: #061844;
@@ -34,6 +56,11 @@
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; font-size: 16px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+.skip-link { position: absolute; top: -100%; left: 1rem; background: var(--navy); color: #fff; padding: 0.75rem 1.5rem; border-radius: 0 0 8px 8px; z-index: 10000; font-weight: 600; text-decoration: none; }
+.skip-link:focus { top: 0; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--orange); outline-offset: 0; }
 body {
   font-family: var(--font-primary);
   background: var(--light-bg);
@@ -618,6 +645,7 @@ footer {
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- NAV -->
 <nav>
@@ -634,11 +662,13 @@ footer {
       <a href="#quality">Quality</a>
       <a href="#contact" class="nav-cta">Request a Quote</a>
     </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
+
+<main id="main">
 
 <!-- HERO -->
 <section class="hero" id="hero">
@@ -886,25 +916,25 @@ footer {
     </div>
     <div class="facility-cards">
       <div class="facility-card reveal">
-        <div class="facility-flag">&#127482;&#127480;</div>
+        <div class="facility-flag" aria-hidden="true">&#127482;&#127480;</div>
         <h4>Crystal Lake, Illinois</h4>
         <div class="facility-entity">SEQUOIA AUTOMATIC</div>
         <p>Executive headquarters, engineering center, and production facility. Hub for program launches and process development.</p>
       </div>
       <div class="facility-card reveal" style="transition-delay: 0.08s;">
-        <div class="facility-flag">&#127474;&#127485;</div>
+        <div class="facility-flag" aria-hidden="true">&#127474;&#127485;</div>
         <h4>Saltillo, Coahuila</h4>
         <div class="facility-entity">SEQUOIA PRECISION COMPONENTS</div>
         <p>Primary volume manufacturing for North America. USMCA-compliant nearshore production with Crystal Lake engineering.</p>
       </div>
       <div class="facility-card reveal" style="transition-delay: 0.16s;">
-        <div class="facility-flag">&#127464;&#127475;</div>
+        <div class="facility-flag" aria-hidden="true">&#127464;&#127475;</div>
         <h4>Nanjing, Jiangsu</h4>
         <div class="facility-entity">SV PRECISION COMPONENTS</div>
         <p>Asia-Pacific production hub. 20 years of established operations and local supply chain integration.</p>
       </div>
       <div class="facility-card reveal" style="transition-delay: 0.24s;">
-        <div class="facility-flag">&#127481;&#127469;</div>
+        <div class="facility-flag" aria-hidden="true">&#127481;&#127469;</div>
         <h4>Chonburi Province</h4>
         <div class="facility-entity">SV PRECISION COMPONENTS</div>
         <p>Southeast Asian manufacturing base supporting regional programs and supply chain diversification.</p>
@@ -936,22 +966,22 @@ footer {
       </div>
       <div class="quality-badges reveal" style="transition-delay: 0.1s;">
         <div class="quality-badge">
-          <div class="badge-icon">&#127941;</div>
+          <div class="badge-icon" aria-hidden="true">&#127941;</div>
           <h5>IATF 16949</h5>
           <p>Certified across all production facilities</p>
         </div>
         <div class="quality-badge">
-          <div class="badge-icon">&#128208;</div>
+          <div class="badge-icon" aria-hidden="true">&#128208;</div>
           <h5>APQP / PPAP</h5>
           <p>Full advanced quality planning and part approval</p>
         </div>
         <div class="quality-badge">
-          <div class="badge-icon">&#128202;</div>
+          <div class="badge-icon" aria-hidden="true">&#128202;</div>
           <h5>SPC Monitoring</h5>
           <p>Real-time statistical process control on critical dims</p>
         </div>
         <div class="quality-badge">
-          <div class="badge-icon">&#128279;</div>
+          <div class="badge-icon" aria-hidden="true">&#128279;</div>
           <h5>Full Traceability</h5>
           <p>Material lot to shipped component, every step documented</p>
         </div>
@@ -971,28 +1001,28 @@ footer {
         <p class="contact-info">Whether you're sourcing precision thermal management components for automotive programs or exploring liquid cooling solutions for data center infrastructure, our engineering team is ready to discuss your requirements.</p>
         <div class="contact-locations">
           <div class="contact-loc">
-            <span class="loc-flag">&#127482;&#127480;</span>
+            <span class="loc-flag" aria-hidden="true">&#127482;&#127480;</span>
             <div>
               <h5>Crystal Lake, IL — Headquarters</h5>
               <p>Engineering, Sales & Executive Office<br>sales@sequoiaweb.com</p>
             </div>
           </div>
           <div class="contact-loc">
-            <span class="loc-flag">&#127474;&#127485;</span>
+            <span class="loc-flag" aria-hidden="true">&#127474;&#127485;</span>
             <div>
               <h5>Saltillo, Coahuila — SMX</h5>
               <p>Volume Manufacturing<br>smx@sequoiaweb.com</p>
             </div>
           </div>
           <div class="contact-loc">
-            <span class="loc-flag">&#127464;&#127475;</span>
+            <span class="loc-flag" aria-hidden="true">&#127464;&#127475;</span>
             <div>
               <h5>Nanjing, Jiangsu — SVPC</h5>
               <p>Asia-Pacific Operations<br>svpc@sv-pc.com</p>
             </div>
           </div>
           <div class="contact-loc">
-            <span class="loc-flag">&#127481;&#127469;</span>
+            <span class="loc-flag" aria-hidden="true">&#127481;&#127469;</span>
             <div>
               <h5>Chonburi — SVTH</h5>
               <p>Southeast Asia Operations<br>svth@sv-pc.com</p>
@@ -1003,24 +1033,25 @@ footer {
       <div class="rfq-form reveal" style="transition-delay: 0.1s;">
         <h3>Request a Quote</h3>
         <p class="form-sub">Submit your requirements and our engineering team will respond within 24 hours.</p>
+        <form onsubmit="event.preventDefault(); alert('Thank you! Our engineering team will review your request and respond within 24 hours.');" novalidate>
         <div class="form-row">
           <div class="form-group">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" placeholder="James">
+            <label for="fname">First Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="fname" placeholder="James" required aria-required="true" autocomplete="given-name">
           </div>
           <div class="form-group">
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" placeholder="Smith">
+            <label for="lname">Last Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="lname" placeholder="Smith" required aria-required="true" autocomplete="family-name">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label for="company">Company</label>
-            <input type="text" id="company" placeholder="Your company">
+            <label for="company">Company <span aria-hidden="true">*</span></label>
+            <input type="text" id="company" placeholder="Your company" required aria-required="true" autocomplete="organization">
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="james@company.com">
+            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" placeholder="james@company.com" required aria-required="true" autocomplete="email">
           </div>
         </div>
         <div class="form-row">
@@ -1040,16 +1071,20 @@ footer {
             <textarea id="details" placeholder="Describe your component requirements, material, estimated annual volume, and any critical tolerances..."></textarea>
           </div>
         </div>
+        <p style="font-size: 0.8rem; color: var(--text-light); margin-bottom: 1rem;">By submitting this form, you agree to our <a href="privacy.html" style="color: var(--orange);">Privacy Policy</a>.</p>
         <div class="form-submit">
-          <button class="btn-primary" type="button" onclick="alert('Thank you! Our engineering team will review your request and respond within 24 hours.')">
+          <button class="btn-primary" type="submit">
             Submit Request
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </button>
         </div>
+        </form>
       </div>
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>
@@ -1085,16 +1120,20 @@ footer {
     <div class="footer-bottom">
       <p>&copy; 2026 Sequoia Automatic. All rights reserved.</p>
       <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="accessibility.html">Accessibility</a>
       </div>
     </div>
   </div>
 </footer>
 
 <script>
-document.getElementById('navToggle').addEventListener('click', () => {
-  document.getElementById('navLinks').classList.toggle('open');
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
 });
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
